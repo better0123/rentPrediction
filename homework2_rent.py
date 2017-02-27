@@ -297,7 +297,7 @@ def predict_rent(X_train, X_test, y_train, y_test):
     X_test : array_like
         Testing dataset
     predicted : array_like
-        Predicted data using LASSO
+        Predicted data using Ridge Regression
 
     """
     clf = Ridge(alpha=110)
