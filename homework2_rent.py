@@ -13,6 +13,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import LassoCV
+from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 if sys.version_info[0] < 3:
     from sklearn.cross_validation import train_test_split
@@ -69,18 +70,18 @@ def impute(X_train, X_test, strategy):
 
     Parameters
     ----------
-    X_train : array_like
+    X_train : DataFrame
         Training dataset
-    X_test : array_like
+    X_test : DataFrame
         Testing dataset
     strategy : Strategy
         Strategy used to impute data
 
     Returns
     -------
-    X_train_imputed : array_like
+    X_train_imputed : DataFrame
         Training dataset with missing value imputed
-    X_test_imputed : array_like
+    X_test_imputed : DataFrame
         Testing dataset with missing value imputed
 
     """
@@ -103,11 +104,11 @@ def process_data(raw_data):
 
     Returns
     -------
-    X_train : array_like
+    X_train : DataFrame
         Training data.
     X_test : array_like
         Testing data.
-    y_train : array_like
+    y_train : DataFrame
         Training target.
     y_test : array_like
         Testing target.
@@ -238,22 +239,22 @@ def feature_selection(X_train, X_test, y_train, y_test):
 
     Parameters
     ----------
-    X_train : array_like
+    X_train : DataFrame
         Training dataset
     X_test : array_like
         Testing dataset
-    y_train : array_like
+    y_train : DataFrame
         Training target
     y_test : array_like
         Testing target
 
     Returns
     -------
-    X_train : array_like
+    X_train : DataFrame
         Training dataset
     X_test : array_like
         Testing dataset
-    y_train : array_like
+    y_train : DataFrame
         Training target
     y_test : array_like
         Testing target
@@ -280,18 +281,18 @@ def predict_rent(X_train, X_test, y_train, y_test):
 
     Parameters
     ----------
-    X_train : array_like
+    X_train : DataFrame
         Training dataset
     X_test : array_like
         Testing dataset
-    y_train : array_like
+    y_train : DataFrame
         Training target
     y_test : array_like
         Testing target
 
     Returns
     -------
-    X_train : array_like
+    X_train : DataFrame
         Training dataset
     X_test : array_like
         Testing dataset
@@ -299,7 +300,7 @@ def predict_rent(X_train, X_test, y_train, y_test):
         Predicted data using LASSO
 
     """
-    clf = Lasso(alpha=0.01425)
+    clf = Ridge(alpha=110)
     clf.fit(X_train, y_train)
     predicted = clf.predict(X_test)
     return X_test, y_test, predicted
