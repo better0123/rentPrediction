@@ -1,4 +1,4 @@
-We modelled the dataset using three linear models (ridge, linear SVM and Lasso). R square (1) is used as the metric to evaluate our models (since is a regression task, meaning the dependent variable is continuous, R square is a reasonable metric). During the model training stage, we use grid search and corss validation to select the best hyperparameter for each model. For the final model selection, we choose the model with the highest R square.     
+We modelled the dataset using two linear models (ridge and Lasso). R square (1) is used as the metric to evaluate our models (since is a regression task, meaning the dependent variable is continuous, R square is a reasonable metric). During the model training stage, we use grid search and corss validation to select the best hyperparameter for each model. For the final model selection, we choose the model with the highest R square.     
 
 The details of the data processing, feature selection and modelling are described below:   
 
@@ -21,14 +21,13 @@ feature selection:
 modelling:  
 10. model with Ridge Regression using grid search after scaling (pipeline fashion)
 11. model with Lasso 
-12. model with linear SVM
   
 result:  
-11. Ridge regression (alpha=110): 0.599 
+12. Ridge regression (alpha=110): 0.599 
     Lasso (alpha=0.01425): 0.600
-    SVM (C= , gamma= ): 
-the best result reaches 0.599 R square
-12. feature engineering comparison: using "median" to impute numerical data yields averaged 0.1% lower R square than using "mean"
-13. feature selection comparison: remove features that have zero LASSO coeficients yeilds averaged 0.15% higher R square than using "remove when below median".    
+The final model is chosen as Lasso with alpha=0.01425 (use median to impute numerical data, most_frequent to impute categorical data, and features only have non-zero Lasso coefficients during feature selections) 
+
+13. feature engineering comparison: using "median" to impute numerical data yields averaged 0.1% lower R square than using "mean"
+14. feature selection comparison: remove features that have zero LASSO coeficients yeilds averaged 0.15% higher R square than using "remove when below median".    
 
 (1) a number that indicates the proportion of the variance in the dependent variable that is predictable from the independent variable
