@@ -1,3 +1,5 @@
+__author__ = "EMily"
+
 import warnings
 warnings.filterwarnings("ignore")
 import sys
