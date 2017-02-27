@@ -1,4 +1,10 @@
-import homework2_rent
+"""This module is for testing the trained result reached our claimed R2 value
+"""
+
+from homework2_rent import score_rent
 
 def test_rent():
-    assert homework2_rent.main() > 0.5
+    r"""Test the trained model with the claimed R2 value
+
+    """
+    assert score_rent() > 0.59
