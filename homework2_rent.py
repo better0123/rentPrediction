@@ -126,7 +126,7 @@ def process_data(raw_data):
 
     #########replace no reply with np.nan for the binary variables##########
     binary_keys = binary_dic.keys()
-    df_binary = df[binary_keys]
+    df_binary = df[list(binary_keys)]
     for key in binary_keys:
 
         # possible_values : list of known-value
@@ -137,7 +137,7 @@ def process_data(raw_data):
 
     #########replace no reply with np.nan for the categorical variables#######
     categorical_keys = categorical_dic.keys()
-    df_categorical = df[categorical_keys]
+    df_categorical = df[list(categorical_keys)]
     for key in categorical_keys:
 
         # possible_values : list of known-value
@@ -149,7 +149,7 @@ def process_data(raw_data):
 
     #########replace no reply with np.nan for the numerical variables#########
     numerical_keys = numerical_dic.keys()
-    df_numerical = df[numerical_keys]
+    df_numerical = df[list(numerical_keys)]
     for key in numerical_keys:
 
         # maximum meaningful value
