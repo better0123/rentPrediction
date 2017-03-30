@@ -11,8 +11,6 @@ We modelled the dataset using three linear models (ridge, linear SVM and Lasso).
 5. Impute test dataset's missing value using information from training data;
 6. Perform `oneHot` on training and testing datasets' categorical data (binary features are left out of this process to avoid multi-colinearity).
 
-### Feature engineering:
-Generating polynomial features with degree 2 on 537 features raised `MemoryError` on a machine with 8G RAM, hence it was discarded.
 
 ### Feature selection:
 1. Apply standard scaler to the training dataset;
