@@ -1,6 +1,6 @@
 """This is the main module containing the data processing and model training code used for hw2
 """
-__author__ = "Emily"
+__author__ = "Emily, Ming"
 
 import warnings
 warnings.filterwarnings("ignore")
