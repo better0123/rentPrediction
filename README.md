@@ -1,5 +1,5 @@
 ## Applied Machine Learning -- Rent Prediction
-### Emily Hua, Ming Zhou
+
 We modelled the dataset using three linear models (ridge, linear SVM and Lasso). R Square<sup>[1](#fn_r2)</sup> is used as the metric to evaluate our models (since is a regression task, meaning the dependent variable is continuous, R Square is a reasonable metric). During the model training stage, we used grid search and cross validation to select the best hyper-parameter for each model. For the final model selection, we choose the model with the highest R Square. The best model is ridge regression with alpha-110 and it reaches 0.592 R Square on the test dataset. 
 
 ### The details of the data processing, feature selection and modelling are described as following:
